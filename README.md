@@ -1,2 +1,3 @@
 # django-data-person
-Collection data person
+
+Data person collection
