@@ -1,0 +1,4 @@
+# PROJECT
+  SECRET_KEY="?"
+  ALLOWED_HOSTS = "?"
+  DEBUG="?" # 0 to false and anyting to true
