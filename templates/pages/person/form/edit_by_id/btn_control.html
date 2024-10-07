@@ -1,0 +1,9 @@
+<button type="submit" name="finish" class="btn btn-primary">
+  <i class="bi bi-floppy me-2"></i>Save
+</button>
+<a
+  href="{% url 'web:person_cancel_by_id' person.person_id %}"
+  class="btn btn-danger ms-2"
+>
+  <i class="bi bi-x-square me-2"></i>Cancel
+</a>

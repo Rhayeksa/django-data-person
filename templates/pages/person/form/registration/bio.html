@@ -1,0 +1,74 @@
+<div class="row g-3 mb-2">
+  <div class="col-lg-6">
+    <div class="row g-3">
+      <div class="col-12">
+        <div class="mb-1">
+          {{field.name.label}} <span class="text-danger">*</span>
+        </div>
+        {{field.name}}
+        <div class="text-danger">{{field.name.errors}}</div>
+      </div>
+      <div class="col-12">
+        <div class="mb-1">
+          {{field.email.label}} <span class="text-danger">*</span>
+        </div>
+        {{field.email}}
+        <div class="text-danger">{{field.email.errors}}</div>
+      </div>
+      <div class="col-12">
+        <div class="mb-1">
+          {{field.gender.label}} <span class="text-danger">*</span>
+        </div>
+        <!- - {% if page == "registration" %} - ->
+        {{field.gender}}
+        <!- - {% else %} - ->
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          name="gender"
+        >
+          <!- -{% for i in opt_gender %}  - ->
+          <!- - {% if field.gender.value == i.0 %} - ->
+          <option selected value="{{ i.0 }}">{{ i.1 }}</option>
+          <!- - {% else %} - ->
+          <option value="{{ i.0 }}">{{ i.1 }}</option>
+          <!- - {% endif %} - ->
+          <!- - {% endfor %} - ->
+        </select>
+        <!- - {% endif %} - ->
+        <div class="text-danger">{{field.gender.errors}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="row g-3">
+      <div class="col-12">
+        <div class="mb-1">
+          {{field.age.label}} <span class="text-danger">*</span>
+        </div>
+        {{field.age}}
+        <div class="text-danger">{{field.age.errors}}</div>
+      </div>
+      <div class="col-12">
+        <div class="mb-1">
+          {{field.phone.label}} <span class="text-danger">*</span>
+        </div>
+        {{field.phone}}
+        <div class="text-danger">{{field.phone.errors}}</div>
+      </div>
+      <div class="col-12">
+        <div class="mb-1">{{field.photo.label}}</div>
+        {{field.photo}}
+        <div class="text-danger">{{field.photo.errors}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mt-3">
+  <div class="mb-1">
+    {{field.address.label}} <span class="text-danger">*</span>
+  </div>
+  {{field.address}}
+  <div class="text-danger">{{field.address.errors}}</div>
+</div>

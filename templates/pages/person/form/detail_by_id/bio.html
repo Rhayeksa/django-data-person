@@ -1,0 +1,98 @@
+<fieldset disabled="disabled">
+  <div class="row g-3 mb-2">
+    <div class="col-lg-12 text-center">
+      {% if person.photo %}
+      <img
+        src="{{ person.photo.url }}"
+        class="rounded-5 img-fluid img-thumbnail"
+        alt="..."
+        style="max-width: 240px; max-height: 240px"
+        loading="lazy"
+        decoding="async"
+      />
+      {% elif not person.photo %}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="240"
+        height="240"
+        fill="currentColor"
+        class="bi bi-person-square"
+        viewBox="0 0 16 16"
+      >
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+        <path
+          d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"
+        />
+      </svg>
+      {% endif %}
+    </div>
+    <div class="col-lg-6">
+      <div class="row g-3">
+        <div class="col-12">
+          <div class="mb-1">
+            {{field.name.label}} <span class="text-danger">*</span>
+          </div>
+          {{field.name}}
+          <div class="text-danger">{{field.name.errors}}</div>
+        </div>
+        <div class="col-12">
+          <div class="mb-1">
+            {{field.email.label}} <span class="text-danger">*</span>
+          </div>
+          {{field.email}}
+          <div class="text-danger">{{field.email.errors}}</div>
+        </div>
+        <div class="col-12">
+          <div class="mb-1">
+            {{field.gender.label}} <span class="text-danger">*</span>
+          </div>
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            name="gender"
+          >
+            <!- -  - ->{% for i in opt_gender %}<!- -  - ->
+            <!- -  - ->{% if field.gender.value == i.0 %}<!- -  - ->
+            <option selected value="{{ i.0 }}">{{ i.1 }}</option>
+            <!- -  - ->{% else %}<!- -  - ->
+            <option value="{{ i.0 }}">{{ i.1 }}</option>
+            <!- -  - ->{% endif %}<!- -  - ->
+            <!- -  - ->{% endfor %}<!- -  - ->
+          </select>
+          <div class="text-danger">{{field.gender.errors}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="row g-3">
+        <div class="col-12">
+          <div class="mb-1">
+            {{field.age.label}} <span class="text-danger">*</span>
+          </div>
+          {{field.age}}
+          <div class="text-danger">{{field.age.errors}}</div>
+        </div>
+        <div class="col-12">
+          <div class="mb-1">
+            {{field.phone.label}} <span class="text-danger">*</span>
+          </div>
+          {{field.phone}}
+          <div class="text-danger">{{field.phone.errors}}</div>
+        </div>
+        <div class="col-12">
+          <div class="mb-1">{{field.photo.label}}</div>
+          {{field.photo}}
+          <div class="text-danger">{{field.photo.errors}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-3">
+    <div class="mb-1">
+      {{field.address.label}} <span class="text-danger">*</span>
+    </div>
+    {{field.address}}
+    <div class="text-danger">{{field.address.errors}}</div>
+  </div>
+</fieldset>
