@@ -1,0 +1,12 @@
+{
+  "nav_core": [
+    {
+      "name": "Person",
+      "link": "/person"
+    },
+    {
+      "name": "Registration",
+      "link": "/"
+    }
+  ]
+}
